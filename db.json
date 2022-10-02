@@ -1,0 +1,24 @@
+{
+  "photo": {
+    "women": [
+      "card-w-01.jpg",
+      "card-w-02.jpg",
+      "card-w-03.jpg",
+      "card-w-04.jpg",
+      "card-w-05.jpg",
+      "card-w-06.jpg",
+      "card-w-07.jpg",
+      "card-w-01-black.jpg"      
+    ],
+    "men": [
+      "card-m-01-black.jpg",
+      "card-m-02-black.jpg",
+      "card-m-03-black.jpg",
+      "card-m-01.jpg",
+      "card-m-02.jpg",
+      "card-m-03.jpg",
+      "card-m-04.jpg",
+      "card-m-05.jpg"
+    ]
+  }
+}

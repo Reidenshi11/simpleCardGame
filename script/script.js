@@ -103,7 +103,7 @@ function animeCards() {
             currentAnimePictures.splice(j, 1);
         }
     }
-    suitNum = mathRandom(1, 57);
+    suitNum = mathRandom(1, 58);
     randomPictures();
     // console.log('k: ', k);
     // console.log('currentAnimePictures: ', currentAnimePictures);

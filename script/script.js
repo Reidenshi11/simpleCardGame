@@ -86,8 +86,9 @@ memoryGame.insertAdjacentHTML('beforeend', linkframeworkCards);
 
 function animeCards() {
     cardSuit = 2;
-    let [num1, num2, num3, num4, num5, num6, suitNum] = [null, null, null, null, null, null, null];
-    let k = [num1, num2, num3, num4, num5 , num6, suitNum];
+    let [num1, num2, num3, num4, num5, num6] = [null, null, null, null, null, null];
+    let suitNum = mathRandom(1, 58);
+    let k = [num1, num2, num3, num4, num5 , num6];
     // console.log('k: ', k);
     currentAnimePictures = animePictures.slice();
     // console.log('currentAnimePictures: ', currentAnimePictures);
@@ -103,7 +104,7 @@ function animeCards() {
             currentAnimePictures.splice(j, 1);
         }
     }
-    suitNum = mathRandom(1, 58);
+    // suitNum = mathRandom(1, 58);
     randomPictures();
     // console.log('k: ', k);
     // console.log('currentAnimePictures: ', currentAnimePictures);
@@ -173,7 +174,7 @@ function animeCards() {
     memoryGame.insertAdjacentHTML('beforeend', linkAnimeCards);
     }
 
-    outToScreen(k[0], k[1], k[2], k[3], k[4], k[5], k[6]);
+    outToScreen(k[0], k[1], k[2], k[3], k[4], k[5], suitNum);
 }
 
 // frameworkCards();

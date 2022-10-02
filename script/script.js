@@ -1,4 +1,5 @@
 const memoryGame = document.querySelector('.memory__game');
+console.log('memoryGame: ', memoryGame);
 let animePictures = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
                     41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,
                     81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,
@@ -111,66 +112,73 @@ function animeCards() {
 
     function outToScreen(num1, num2, num3, num4, num5, num6, suitNum) {
         let linkAnimeCards = `
-    <div class="memory__card" data-framework="animeGirl_${num1}">
-        <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+        <section class="memory__game">
+            <div class="theme">
+                <div class="memory__card" data-framework="animeGirl_${num1}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num1}">
-        <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num1}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num2}">
-        <img class="front__face_anime" src="./img/animeGirl_${num2}.jpg" alt="Anime Girl ${num2}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num2}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num2}.jpg" alt="Anime Girl ${num2}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num2}">
-        <img class="front__face_anime" src="./img/animeGirl_${num2}.jpg" alt="Anime Girl ${num2}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num2}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num2}.jpg" alt="Anime Girl ${num2}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num3}">
-        <img class="front__face_anime" src="./img/animeGirl_${num3}.jpg" alt="Anime Girl ${num3}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num3}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num3}.jpg" alt="Anime Girl ${num3}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num3}">
-        <img class="front__face_anime" src="./img/animeGirl_${num3}.jpg" alt="Anime Girl ${num3}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num3}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num3}.jpg" alt="Anime Girl ${num3}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num4}">
-        <img class="front__face_anime" src="./img/animeGirl_${num4}.jpg" alt="Anime Girl ${num4}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num4}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num4}.jpg" alt="Anime Girl ${num4}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num4}">
-        <img class="front__face_anime" src="./img/animeGirl_${num4}.jpg" alt="Anime Girl ${num4}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num4}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num4}.jpg" alt="Anime Girl ${num4}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num5}">
-        <img class="front__face_anime" src="./img/animeGirl_${num5}.jpg" alt="Anime Girl ${num5}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num5}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num5}.jpg" alt="Anime Girl ${num5}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num5}">
-        <img class="front__face_anime" src="./img/animeGirl_${num5}.jpg" alt="Anime Girl ${num5}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num5}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num5}.jpg" alt="Anime Girl ${num5}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num6}">
-        <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>
+                <div class="memory__card" data-framework="animeGirl_${num6}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div>
 
-    <div class="memory__card" data-framework="animeGirl_${num6}">
-        <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
-        <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
-    </div>`
+                <div class="memory__card" data-framework="animeGirl_${num6}">
+                    <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
+                    <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+                </div> 
+            </div>
+        </section>`
 
+    // memoryGame.insertAdjacentHTML('beforeend', linkAnimeCards);
+    // memoryGame.replaceWith(..."");
+    // console.log('memoryGame: ', memoryGame);
     memoryGame.insertAdjacentHTML('beforeend', linkAnimeCards);
     }
 

@@ -92,8 +92,11 @@ function animeCards() {
 
     function randomPictures() {
         for (let i = 0; i < +(k.length); i++) {
-            j = mathRandom(1, +(currentAnimePictures.length));
+            j = mathRandom(1, currentAnimePictures.length - 1);
+            console.log('currentAnimePictures.length: ', currentAnimePictures.length);
+            console.log('j: ', j);
             k[i] = currentAnimePictures[j];
+            console.log('currentAnimePictures[j]: ', currentAnimePictures[j]);
             currentAnimePictures.splice(j, 1);
         }
     }

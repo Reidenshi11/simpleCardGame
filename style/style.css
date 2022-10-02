@@ -13,6 +13,14 @@ body {
     perspective: 1000px;
 }
 
+.theme {
+    width: 100%;
+    height: 100%;
+    display: inherit;
+    flex-wrap: inherit;
+    perspective: inherit;
+}
+
 .memory__card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
@@ -58,3 +66,10 @@ body {
 .front__face_anime {
     transform: rotateY(180deg);
 }
+
+/* img {
+    /* width: 100%;
+    height: auto; */
+    /* object-position: top;
+    object-fit: cover; 
+} */

@@ -73,3 +73,19 @@ body {
     /* object-position: top;
     object-fit: cover; 
 } */
+@media (min-width: 320px) {
+    .memory__game {
+        width: 320px;
+        height: 320px;
+        margin: 40px 0px;
+    }
+
+    .theme {
+        margin: 0px 5px;
+    }
+
+    .memory__card {
+        width: calc(25% - 10px);
+        height: calc(33.333% - 10px);
+    }
+}

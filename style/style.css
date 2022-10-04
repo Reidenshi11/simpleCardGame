@@ -5,14 +5,18 @@ body {
 }
 
 .memory__game {
-    width: 640px;
-    height: 640px;
+    position: relative;
+    display: flex;
+    width: 100vmin;
+    height: 100vmin;
     /* width: 100%;
     height: 100%;
     max-width: 640px;
     max-height: 640px; */
-    margin: auto;
-    display: flex;
+    margin-top: 50px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+
     flex-wrap: wrap;
     perspective: 1000px;
 }
@@ -23,12 +27,14 @@ body {
     display: inherit;
     flex-wrap: inherit;
     perspective: inherit;
+    gap: 10px;
+    align-items: center;
 }
 
 .memory__card {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
-    margin: 5px;
+    width: calc(25% - 20px);
+    height: calc(33.333% - 20px);
+    margin: 4px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
     transform: scale(1);
@@ -71,6 +77,12 @@ body {
     transform: rotateY(180deg);
 }
 
+img {
+    max-width: 100%;
+    object-fit:cover;
+    object-position: top;
+}
+
 /* img {
     /* width: 100%;
     height: auto; */
@@ -78,11 +90,11 @@ body {
     object-fit: cover; 
 } */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
     .memory__game {
-        width: 320px;
-        height: 320px;
-        margin: 40px 0px;
+        width: 90vh;
+        height: 100vmax;
+        margin: 40px auto 0px;
     }
 
     .theme {
@@ -94,3 +106,4 @@ body {
         height: calc(33.333% - 10px);
     }
 }
+ */

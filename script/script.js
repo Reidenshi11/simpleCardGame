@@ -301,13 +301,15 @@ function cardToBig(objCard) {
     function classToCardBig() {
         this.classList.toggle('big');
     };
+
+    let ldelay;
+    let pdelay;
+    let betw={};
     
     objCard.forEach(card => {
         card.addEventListener('dblclick', classToCardBig);
         card.addEventListener('contextmenu', classToCardBig);
     
-        let ldelay;
-        let betw={};
         card.addEventListener('touchstart', function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -317,7 +319,7 @@ function cardToBig(objCard) {
         }, false);
         /*Ловим отпускание пальца*/
         card.addEventListener('touchend', function(event) {
-        let pdelay=new Date();
+        pdelay=new Date();
         if(event.changedTouches[0].pageX==betw.x &&
         event.changedTouches[0].pageY==betw.y &&
         (pdelay.getTime()-ldelay.getTime())>800){

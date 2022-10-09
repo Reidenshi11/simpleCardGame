@@ -444,6 +444,7 @@ btnPlayAgain.onclick = () => {
     // clearScreen();
 
     animeCards();
+    win = 12;
     // randomPictures();
     cards = document.querySelectorAll('.memory__card');
     shuffle()

@@ -275,7 +275,7 @@ function cardToFlip(objCard) {
         if (event.targetTouches.length == 1) {
         let myclick=event.targetTouches[0]; flipCard
         }
-    }, false);
+    }, true);
 }
 
 cardToFlip(cards);
@@ -315,7 +315,7 @@ function cardToBig(objCard) {
         ldelay=new Date();
         betw.x=event.changedTouches[0].pageX;
         betw.y=event.changedTouches[0].pageY;
-        }, false);
+        }, true);
         /*Ловим отпускание пальца*/
         card.addEventListener('touchend', function(event) {
         let pdelay=new Date();
@@ -324,7 +324,7 @@ function cardToBig(objCard) {
         (pdelay.getTime()-ldelay.getTime())>800){
             classToCardBig
         }
-        }, false);
+        }, true);
 })};
 
 cardToBig(cards);

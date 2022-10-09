@@ -469,10 +469,10 @@ modal.addEventListener('click', ({target}) => {
 })
 
 
-cards.forEach(card => {
-    card.addEventListener('click', ({target}) => {
-        if (!!target.classList.contains('big')) {
-            card.classList.remove('big');
-        }
-    })
-})
+// cards.forEach(card => {
+//     card.addEventListener('click', ({target}) => {
+//         if (!target.classList.contains('container')) {
+//             card.classList.remove('big');
+//         }
+//     })
+// })

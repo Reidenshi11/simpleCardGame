@@ -269,13 +269,14 @@ let cards = document.querySelectorAll('.memory__card');
 function cardToFlip(objCard) {
     objCard.forEach(card => {
         card.addEventListener('click', flipCard)
+
+        card.addEventListener('touchstart', function(event) {
+            if (event.targetTouches.length == 1) {
+            let myclick=event.targetTouches[0]; flipCard
+            }
+        }, false);
     })
 
-    // objCard.addEventListener('touchstart', function(event) {
-    //     if (event.targetTouches.length == 1) {
-    //     let myclick=event.targetTouches[0]; flipCard
-    //     }
-    // }, false);
 }
 
 cardToFlip(cards);

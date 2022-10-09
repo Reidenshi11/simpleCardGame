@@ -4,6 +4,7 @@ const memoryGame = document.querySelector('.memory__game');
 const btnPlayAgain = document.querySelector('#playAgain');
 const btnCloseCard = document.querySelector('#btnCloseCard');
 let idTheme = document.querySelector('#idTheme');
+let cardWrapper = document.querySelectorAll('.memory__card');
 
 console.log('memoryGame: ', memoryGame);
 let animePictures = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
@@ -274,7 +275,7 @@ function cardToFlip(objCard) {
             if (event.targetTouches.length == 1) {
             let myclick=event.targetTouches[0]; flipCard
             }
-        }, true);
+        }, false);
     })
 
 }
@@ -303,20 +304,21 @@ function cardToBig(objCard) {
         this.classList.toggle('big');
     };
 
-    let ldelay;
-    let betw={};
     
     objCard.forEach(card => {
         card.addEventListener('dblclick', classToCardBig);
         card.addEventListener('contextmenu', classToCardBig);
     
+
+        let ldelay;
+        let betw={};
         card.addEventListener('touchstart', function(event) {
         event.preventDefault();
         event.stopPropagation();
         ldelay=new Date();
         betw.x=event.changedTouches[0].pageX;
         betw.y=event.changedTouches[0].pageY;
-        }, true);
+        }, false);
         /*Ловим отпускание пальца*/
         card.addEventListener('touchend', function(event) {
         let pdelay=new Date();
@@ -325,7 +327,7 @@ function cardToBig(objCard) {
         (pdelay.getTime()-ldelay.getTime())>800){
             classToCardBig
         }
-        }, true);
+        }, false);
 })};
 
 cardToBig(cards);
@@ -464,4 +466,13 @@ modal.addEventListener('click', ({target}) => {
         modal.close();
         // alert('1')
     }
+})
+
+
+cards.forEach(card => {
+    card.addEventListener('click', ({target}) => {
+        if (!!target.classList.contains('big')) {
+            card.classList.remove('big');
+        }
+    })
 })

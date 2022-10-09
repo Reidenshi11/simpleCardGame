@@ -274,7 +274,7 @@ function cardToFlip(objCard) {
             if (event.targetTouches.length == 1) {
             let myclick=event.targetTouches[0]; flipCard
             }
-        }, false);
+        }, true);
     })
 
 }

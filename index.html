@@ -14,8 +14,9 @@
     <title>Найди пару (Карточная игра)</title>
 </head>
 <body>
+    <!-- <button class="button__test" id="btnShow">Show modal</button> -->
     <section class="memory__game">
-        <!-- <div class="theme">
+        <div id="idTheme" class="theme">
             <div class="memory__card" data-framework="react">
                 <img class="front__face" src="./img/react.svg" alt="React" width="150" height="200">
                 <img class="back__face" src="./img/js-badge.svg" alt="Memory Card" width="150" height="200"> 
@@ -75,8 +76,26 @@
                 <img class="front__face" src="./img/backbone.svg" alt="Backbone" width="150" height="200">
                 <img class="back__face" src="./img/js-badge.svg" alt="Memory Card" width="150" height="200">
             </div>  
-        </div> -->
+        </div>
     </section>
+
+    <dialog class="modal" id="dialog">
+        <!-- <h2>WIN</h2> -->
+        <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus minima quod ipsam sed facilis saepe ea quos vero nesciunt numquam!</p> -->
+        <button class="button__play" id="playAgain" role="button"><span class="text">Еще раз</span></button>
+    </dialog>
+
+    <!-- <dialog class="big__card_wrapper">
+        <figure>
+            <div id="big__card">
+                <img src="./img/animeGirl_1.jpg" alt="">
+            </div>
+            <figcaption>
+                <button id="btnCloseCard">Close</button>
+            </figcaption>
+        </figure>
+    </dialog> -->
+
 
     
 </body>

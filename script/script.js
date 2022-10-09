@@ -1,4 +1,10 @@
+const modal = document.querySelector('#dialog');
+const btnShow = document.querySelector('#btnShow')
 const memoryGame = document.querySelector('.memory__game');
+const btnPlayAgain = document.querySelector('#playAgain');
+const btnCloseCard = document.querySelector('#btnCloseCard');
+let idTheme = document.querySelector('#idTheme');
+
 console.log('memoryGame: ', memoryGame);
 let animePictures = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
                     41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,
@@ -6,6 +12,7 @@ let animePictures = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
                     121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140];
 // console.log('animePictures: ', animePictures);
 let cardSuit = 0;
+let win = 12;
 
 // animePictures.splice(1, 1);
 // console.log('animePictures: ', animePictures);
@@ -84,6 +91,10 @@ function frameworkCards() {
 memoryGame.insertAdjacentHTML('beforeend', linkframeworkCards);
 }
 
+function clearScreen() {
+    // idTheme.outerHTML = ' <div id="idTheme" class="theme"><h2>Жопа не работает</h2></div>';
+    idTheme.outerHTML = '';
+}
 
 function animeCards() {
     cardSuit = 2;
@@ -111,9 +122,74 @@ function animeCards() {
     // console.log('currentAnimePictures: ', currentAnimePictures);
 
     function outToScreen(num1, num2, num3, num4, num5, num6, suitNum) {
-        let linkAnimeCards = `
-        <section class="memory__game">
-            <div class="theme">
+        // clearScreen();
+
+        // let linkAnimeCards = `
+        //     <div class="theme">
+        //         <div class="memory__card" data-framework="animeGirl_${num1}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num1}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num2}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num2}.jpg" alt="Anime Girl ${num2}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num2}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num2}.jpg" alt="Anime Girl ${num2}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num3}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num3}.jpg" alt="Anime Girl ${num3}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num3}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num3}.jpg" alt="Anime Girl ${num3}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num4}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num4}.jpg" alt="Anime Girl ${num4}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num4}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num4}.jpg" alt="Anime Girl ${num4}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num5}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num5}.jpg" alt="Anime Girl ${num5}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num5}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num5}.jpg" alt="Anime Girl ${num5}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num6}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div>
+
+        //         <div class="memory__card" data-framework="animeGirl_${num6}">
+        //             <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
+        //             <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
+        //         </div> 
+        //     </div>`
+
+
+        idTheme.outerHTML = `
+            <div id="idTheme" class="theme">
                 <div class="memory__card" data-framework="animeGirl_${num1}">
                     <img class="front__face_anime" src="./img/animeGirl_${num1}.jpg" alt="Anime Girl ${num1}">
                     <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
@@ -173,27 +249,61 @@ function animeCards() {
                     <img class="front__face_anime" src="./img/animeGirl_${num6}.jpg" alt="Anime Girl ${num6}">
                     <img class="back__face_anime" src="./img/suit_${suitNum}.jpg" alt="Memory Card">
                 </div> 
-            </div>
-        </section>`
-
+            </div>`
+        
     // memoryGame.insertAdjacentHTML('beforeend', linkAnimeCards);
     // memoryGame.replaceWith(..."");
     // console.log('memoryGame: ', memoryGame);
-    memoryGame.insertAdjacentHTML('beforeend', linkAnimeCards);
+    
+    // memoryGame.insertAdjacentHTML('beforeend', linkAnimeCards);
     }
 
     outToScreen(k[0], k[1], k[2], k[3], k[4], k[5], suitNum);
-}
+    idTheme = document.querySelector('#idTheme');
+};
 
-// frameworkCards();
-// randomPictures();
 animeCards();
 
-const cards = document.querySelectorAll('.memory__card');
+let cards = document.querySelectorAll('.memory__card');
+
+function cardToFlip(objCard) {
+    objCard.forEach(card => {
+        card.addEventListener('click', flipCard)
+    })
+}
+
+cardToFlip(cards);
+
+console.log('cards: ', cards);
+
+function cardToBig(objCard) {
+    function classToCardBig() {
+        this.classList.toggle('big');
+    };
+
+    objCard.forEach(card => {
+        // card.ondblclick = () => alert('2');
+        // // card.onclick = () => alert('1');
+        // card.onfocus = () => alert('3');
+        // card.oncontextmenu = () => alert('4');
+
+        card.addEventListener('dblclick', classToCardBig)
+        card.addEventListener('contextmenu', classToCardBig)
+    })};
+
+cardToBig(cards);
+
+
+
+// card.addEventListener()
+// cards.forEach(card => {
+//     card.addEventListener('click', flipCard)
+// })
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
+
 
 
 function flipCard() {
@@ -213,6 +323,7 @@ function flipCard() {
     checkForMatch();
 }
 
+
 function checkForMatch() {
     if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
@@ -226,7 +337,15 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
+    firstCard.classList.add('open');
+    secondCard.classList.add('open');
+
     resetBoard();
+    
+    win -= 2;
+    if (win == 0) {
+        modal.showModal();
+    } 
 }
 
 function unflipCards() {
@@ -246,6 +365,7 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+
 function shuffle() {
     let q = [1,2,3,4,5,6,7,8,9,10,11,12];
     cards.forEach(card => {
@@ -258,12 +378,55 @@ function shuffle() {
     });
 };
 
-cards.forEach(card => {
-    card.addEventListener('click', flipCard)
-})
-
-
-
 shuffle();
+
+// function funcWin() {
+//     let obj  = document.querySelectorAll('idTheme');
+//     if (obj.forEach(card => {
+//         card.classList.contains('open')
+//     })) {
+//         modal.showModal();
+//     }
+// };
+
+
+/// if(this.classList.contains('active'))    
+
+// cards.forEach(card => {
+//     card.addEventListener('click', flipCard)
+// })
+
+
+btnPlayAgain.onclick = () => {
+    hasFlippedCard = false;
+    lockBoard = false;
+
+
+    // clearScreen();
+
+    animeCards();
+    // randomPictures();
+    cards = document.querySelectorAll('.memory__card');
+    shuffle()
+    cardToFlip(cards);
+    modal.close();
+}
+
+
+// console.log('memoryGame Text: ', memoryGame.textContent);
+// console.log('memoryGame outerHTML: ', memoryGame.outerHTML);
+
+
+
+// btnShow.onclick = () => {
+//     modal.showModal();
+// }
+
+modal.addEventListener('click', ({target}) => {
+    if (target.classList.contains('modal')) {
+        modal.close();
+        // alert('1')
+    }
+})
 
 

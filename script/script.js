@@ -429,4 +429,51 @@ modal.addEventListener('click', ({target}) => {
     }
 })
 
+let ldelay;
+let betw={};
+document.addEventListener('touchstart', function(event) {
+event.preventDefault();
+event.stopPropagation();
+ldelay=new Date();
+betw.x=event.changedTouches[0].pageX;
+betw.y=event.changedTouches[0].pageY;
+}, false);
+/*Ловим отпускание пальца*/
+document.addEventListener('touchend', function(event) {
+let pdelay=new Date();
+if(event.changedTouches[0].pageX==betw.x &&
+event.changedTouches[0].pageY==betw.y &&
+(pdelay.getTime()-ldelay.getTime())>800){
+    classToCardBig
+}
+}, false);
 
+
+function cardToBig(objCard) {
+    function classToCardBig() {
+        this.classList.toggle('big');
+    };
+
+    objCard.forEach(card => {
+        card.addEventListener('dblclick', classToCardBig);
+        card.addEventListener('contextmenu', classToCardBig);
+
+        let ldelay;
+        let betw={};
+        card.addEventListener('touchstart', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        ldelay=new Date();
+        betw.x=event.changedTouches[0].pageX;
+        betw.y=event.changedTouches[0].pageY;
+        }, false);
+        /*Ловим отпускание пальца*/
+        card.addEventListener('touchend', function(event) {
+        let pdelay=new Date();
+        if(event.changedTouches[0].pageX==betw.x &&
+        event.changedTouches[0].pageY==betw.y &&
+        (pdelay.getTime()-ldelay.getTime())>800){
+            classToCardBig
+        }
+        }, false);
+    })};

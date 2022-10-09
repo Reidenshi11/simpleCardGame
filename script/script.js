@@ -303,7 +303,6 @@ function cardToBig(objCard) {
     };
 
     let ldelay;
-    let pdelay;
     let betw={};
     
     objCard.forEach(card => {
@@ -319,7 +318,7 @@ function cardToBig(objCard) {
         }, false);
         /*Ловим отпускание пальца*/
         card.addEventListener('touchend', function(event) {
-        pdelay=new Date();
+        let pdelay=new Date();
         if(event.changedTouches[0].pageX==betw.x &&
         event.changedTouches[0].pageY==betw.y &&
         (pdelay.getTime()-ldelay.getTime())>800){

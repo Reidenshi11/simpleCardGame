@@ -5,6 +5,7 @@ const btnPlayAgain = document.querySelector('#playAgain');
 const btnCloseCard = document.querySelector('#btnCloseCard');
 let idTheme = document.querySelector('#idTheme');
 let cardWrapper = document.querySelectorAll('.memory__card');
+let modalWins = document.querySelector('#wins');
 
 console.log('memoryGame: ', memoryGame);
 let animePictures = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
@@ -14,6 +15,7 @@ let animePictures = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
 // console.log('animePictures: ', animePictures);
 let cardSuit = 0;
 let win = 12;
+let seriaWins = 0;
 
 // animePictures.splice(1, 1);
 // console.log('animePictures: ', animePictures);
@@ -383,6 +385,8 @@ function disableCards() {
     
     win -= 2;
     if (win == 0) {
+        seriaWins += 1;
+        modalWins.textContent = `${seriaWins}`;
         modal.showModal();
     } 
 }

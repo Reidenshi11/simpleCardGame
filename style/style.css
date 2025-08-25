@@ -146,7 +146,8 @@ dialog::backdrop {
     align-items: center;
     z-index: 100;
     margin: auto auto;
-    width: calc(90vw * 0.7);
+    width: 90vw;
+    /* width: calc(90vw * 0.7); */
     /* height: calc(132% ); */
     height: 90vh;
     object-fit: cover;

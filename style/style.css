@@ -74,9 +74,12 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: 90vh;
     object-fit:cover;
     object-position: top;
+    /* align-self: center;
+    justify-self: center; */
+    
 }
 
 dialog {
@@ -140,10 +143,12 @@ dialog::backdrop {
 
 .big {
     position: fixed;
+    align-items: center;
     z-index: 100;
     margin: auto auto;
-    width: calc(100%);
-    height: calc(132% );
+    width: calc(90vw * 0.7);
+    /* height: calc(132% ); */
+    height: 90vh;
     object-fit: cover;
     object-position: center;
     transition: all 2s ease-in-out;
